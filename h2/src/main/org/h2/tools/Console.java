@@ -36,6 +36,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.h2.server.ShutdownHandler;
 import org.h2.util.JdbcUtils;
+import org.h2.util.LogUtil;
 import org.h2.util.Tool;
 import org.h2.util.Utils;
 
@@ -111,6 +112,7 @@ ShutdownHandler {
      */
     @Override
     public void runTool(String... args) throws SQLException {
+        LogUtil.get().print(this.getClass(),"runTool begin1111");
         isWindows = Utils.getProperty("os.name", "").startsWith("Windows");
         boolean tcpStart = false, pgStart = false, webStart = false, toolStart = false;
         boolean browserStart = false;
